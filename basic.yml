@@ -1,1 +1,45 @@
-# Test
+swagger: '2.0'
+person:
+  name: &name "Jonathan"
+  occupation : 'Programmer'
+  age: 24
+  age1: !!float 24
+  gpa: 3.5
+  gpa1: !!str 3.5
+  fav-num: 1e+100
+  male: true
+  birthday: 1995-28-07 07:30:00         #iso 8601
+  flaws: null
+
+  hobbies: 
+    - gaming
+    - cooking
+    - movies
+  movies : ["Dark Knight" , "Good Will Hunting"]
+  friends :
+    - name: "Johner"
+      age : 24
+    - {name: "Robert", age : 24}
+    -
+      name: "Libhan"
+      age: 23
+  description: #Foce to be in one line
+      >
+    Nulla consequet mass quis enim.
+    Donec pede justo, fringilla vel,
+    aliquent nec, vulputate eget, arcu.
+    In enim justo, rhoncus ut, imperdiet 
+    a, venenatis vitae, justo
+  signature: #keep the same 
+      |    
+    Jonathan
+    Kilcock
+    email - jonathan.roddy1@gmail.com  
+  
+  id: *name 
+  base: &base
+    var1 : value1
+    
+  foo: 
+    <<: *base  var1 : value1
+    var2: value2
